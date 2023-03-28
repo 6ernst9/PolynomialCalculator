@@ -13,18 +13,15 @@ public class Window extends JFrame implements ActionListener {
     private final JLabel polynomTitle1;
     private final JLabel polynomTitle2;
     private final JLabel titleResult;
-
     private final JTextField polynomForm1;
     private final JTextField polynomForm2;
     private final JTextField resultForm;
-
     private final JButton buttonAdd;
     private final JButton buttonSub;
     private final JButton buttonMul;
     private final JButton buttonDiv;
     private final JButton buttonDeriv;
     private final JButton buttonInteg;
-
     public Window() {
         setTitle("Polynom Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
