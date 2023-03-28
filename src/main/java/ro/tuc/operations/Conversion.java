@@ -17,7 +17,6 @@ public class Conversion {
             if (term.contains("x^")) {
                 String[] parts = term.split("\\*x\\^");
                 monom = new Monom(Float.parseFloat(parts[0].trim()), Integer.parseInt(parts[1].trim()));
-
             }
             else if (term.contains("x")) {
                 monom = new Monom(Float.parseFloat(term.replace("*x", "").trim()), 1);

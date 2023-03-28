@@ -12,37 +12,26 @@ public class Operations {
         int j = 0;
         while (i <= firstPolynom.getGrad() && j <= secondPolynom.getGrad()) {
             if (i > j){
-                if(firstPolynom.getCoefficient(i)!=null)
-                    result.add(new Monom(firstPolynom.getCoefficient(i), i));
+                if(firstPolynom.getCoefficient(i)!=null) result.add(new Monom(firstPolynom.getCoefficient(i), i));
                 i++;
-            }
-            else if (j > i){
-                if(secondPolynom.getCoefficient(j)!=null)
-                    result.add(new Monom(secondPolynom.getCoefficient(j), j));
+            } else if (j > i){
+                if(secondPolynom.getCoefficient(j)!=null) result.add(new Monom(secondPolynom.getCoefficient(j), j));
                 i++;
-            }
-            else {
+            } else {
                 float firstCoefficient = firstPolynom.getCoefficient(i)!=null ? firstPolynom.getCoefficient(i) : 0;
                 float secondCoefficient = secondPolynom.getCoefficient(j)!=null ? secondPolynom.getCoefficient(j) : 0;
                 float sumOfCoefficients = firstCoefficient + secondCoefficient;
-                if(sumOfCoefficients!=0)
-                    result.add(new Monom(sumOfCoefficients, i));
+                if(sumOfCoefficients!=0) result.add(new Monom(sumOfCoefficients, i));
                 i++;
                 j++;
             }
         }
-
         while (i <= firstPolynom.getGrad()) {
-            if(firstPolynom.getCoefficient(i)!=null){
-                result.add(new Monom(firstPolynom.getCoefficient(i), i));
-            }
+            if(firstPolynom.getCoefficient(i)!=null) result.add(new Monom(firstPolynom.getCoefficient(i), i));
             i++;
         }
-
         while (j <= secondPolynom.getGrad()) {
-            if(secondPolynom.getCoefficient(j)!=null){
-                result.add(new Monom(secondPolynom.getCoefficient(j), j));
-            }
+            if(secondPolynom.getCoefficient(j)!=null) result.add(new Monom(secondPolynom.getCoefficient(j), j));
             j++;
         }
         return new Polynom(result);
@@ -54,37 +43,26 @@ public class Operations {
         int j = 0;
         while (i <= firstPolynom.getGrad() && j <= secondPolynom.getGrad()) {
             if (i > j){
-                if(firstPolynom.getCoefficient(i)!=null)
-                    result.add(new Monom(firstPolynom.getCoefficient(i), i));
+                if(firstPolynom.getCoefficient(i)!=null) result.add(new Monom(firstPolynom.getCoefficient(i), i));
                 i++;
-            }
-            else if (j > i){
-                if(secondPolynom.getCoefficient(j)!=null)
-                    result.add(new Monom(secondPolynom.getCoefficient(j), j));
+            } else if (j > i){
+                if(secondPolynom.getCoefficient(j)!=null) result.add(new Monom(secondPolynom.getCoefficient(j), j));
                 i++;
-            }
-            else {
+            } else {
                 float firstCoefficient = firstPolynom.getCoefficient(i)!=null ? firstPolynom.getCoefficient(i) : 0;
                 float secondCoefficient = secondPolynom.getCoefficient(j)!=null ? secondPolynom.getCoefficient(j) : 0;
                 float sumOfCoefficients = firstCoefficient - secondCoefficient;
-                if(sumOfCoefficients!=0)
-                    result.add(new Monom(sumOfCoefficients, i));
+                if(sumOfCoefficients!=0) result.add(new Monom(sumOfCoefficients, i));
                 i++;
                 j++;
             }
         }
-
         while (i <= firstPolynom.getGrad()) {
-            if(firstPolynom.getCoefficient(i)!=null){
-                result.add(new Monom(firstPolynom.getCoefficient(i), i));
-            }
+            if(firstPolynom.getCoefficient(i)!=null) result.add(new Monom(firstPolynom.getCoefficient(i), i));
             i++;
         }
-
         while (j <= secondPolynom.getGrad()) {
-            if(secondPolynom.getCoefficient(j)!=null){
-                result.add(new Monom(secondPolynom.getCoefficient(j), j));
-            }
+            if(secondPolynom.getCoefficient(j)!=null) result.add(new Monom(secondPolynom.getCoefficient(j), j));
             j++;
         }
         return new Polynom(result);

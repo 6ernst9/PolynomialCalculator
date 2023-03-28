@@ -1,6 +1,5 @@
 package ro.tuc.frontend;
 
-import ro.tuc.model.Monom;
 import ro.tuc.model.Polynom;
 import ro.tuc.operations.Conversion;
 import ro.tuc.operations.Operations;
