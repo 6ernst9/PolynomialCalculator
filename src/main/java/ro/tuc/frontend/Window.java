@@ -9,10 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
-import java.awt.*;
-import javax.swing.*;
 
 public class Window extends JFrame implements ActionListener {
     private final JLabel polynomTitle1;
@@ -31,7 +27,7 @@ public class Window extends JFrame implements ActionListener {
     private final JButton buttonInteg;
 
     public Window() {
-        setTitle("Polynomial Calculator");
+        setTitle("Polynom Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
 
@@ -86,14 +82,14 @@ public class Window extends JFrame implements ActionListener {
         buttonInteg.setForeground(Color.BLACK);
         buttonPanel.add(buttonInteg);
 
-        JPanel mainPanel = new JPanel(new BorderLayout());
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        mainPanel.setBackground(new Color(238, 238, 238));
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panel.setBackground(new Color(238, 238, 238));
 
-        mainPanel.add(inputPanel, BorderLayout.NORTH);
-        mainPanel.add(buttonPanel, BorderLayout.CENTER);
+        panel.add(inputPanel, BorderLayout.PAGE_START);
+        panel.add(buttonPanel, BorderLayout.CENTER);
 
-        add(mainPanel);
+        add(panel);
 
         buttonAdd.addActionListener(this);
         buttonSub.addActionListener(this);
@@ -116,30 +112,36 @@ public class Window extends JFrame implements ActionListener {
         if (buttonAdd.equals(source)) {
             polynom1 = Conversion.convertFromString(input1);
             polynom2 = Conversion.convertFromString(input2);
+
             resultForm.setText(Operations.add(polynom1, polynom2).toString());
-
-        } else if (buttonSub.equals(source)) {
+        }
+        else if (buttonSub.equals(source)) {
             polynom1 = Conversion.convertFromString(input1);
             polynom2 = Conversion.convertFromString(input2);
+
             resultForm.setText(Operations.sub(polynom1, polynom2).toString());
-
-        } else if (buttonMul.equals(source)) {
+        }
+        else if (buttonMul.equals(source)) {
             polynom1 = Conversion.convertFromString(input1);
             polynom2 = Conversion.convertFromString(input2);
+
             resultForm.setText(Operations.mul(polynom1, polynom2).toString());
-
-        } else if (buttonDiv.equals(source)) {
+        }
+        else if (buttonDiv.equals(source)) {
+            polynom1 = Conversion.convertFromString(input1);
+            polynom2 = Conversion.convertFromString(input2);
+            //TODO division operation
+        }
+        else if (buttonDeriv.equals(source)) {
             polynom1 = Conversion.convertFromString(input1);
             polynom2 = Conversion.convertFromString(input2);
 
-        } else if (buttonDeriv.equals(source)) {
-            polynom1 = Conversion.convertFromString(input1);
-            polynom2 = Conversion.convertFromString(input2);
             resultForm.setText(Operations.derivative(polynom1).toString());
-
-        } else if (buttonInteg.equals(source)) {
+        }
+        else if (buttonInteg.equals(source)) {
             polynom1 = Conversion.convertFromString(input1);
             polynom2 = Conversion.convertFromString(input2);
+
             resultForm.setText(Operations.integral(polynom1).toString());
         }
     }
